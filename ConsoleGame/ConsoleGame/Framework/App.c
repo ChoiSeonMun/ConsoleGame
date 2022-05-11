@@ -2,6 +2,7 @@
 #include "Common.h"
 #include "Renderer.h"
 #include "Timer.h"
+#include "Input.h"
 
 bool App_Init()
 {
@@ -15,30 +16,33 @@ bool App_Init()
 
 void processInput()
 {
-
+	Input_Update();
 }
 
-float elapsedTime;
-bool canShow = false;
+char str[128];
 void update()
 {
-	// 0.5초마다 깜빡이는 텍스트를 만드시오.
-	elapsedTime += DELTA_TIME;
+	sprintf_s(str, sizeof(str), "현재 입력 없음");
 
-	if (elapsedTime >= 0.5f)
+	if (Input_GetKey(VK_UP))
 	{
-		elapsedTime = 0.0f;
-		canShow = !canShow;
+		sprintf_s(str, sizeof(str), "위쪽 화살표 눌림");
+	}
+	
+	if (Input_GetKey(VK_DOWN))
+	{
+		sprintf_s(str, sizeof(str), "아래쪽 화살표 눌림");
+	}
+
+	if (Input_GetKey(VK_LEFT) && Input_GetKey(VK_RIGHT))
+	{
+		sprintf_s(str, sizeof(str), "왼쪽, 오른쪽 화살표 동시 눌림");
 	}
 }
 
 void render()
 {
-	if (canShow)
-	{
-		Renderer_DrawText("이 텍스트는 깜빡입니다.", sizeof("이 텍스트는 깜빡입니다."));
-	}
-
+	Renderer_DrawText(str, strlen(str));
 	Renderer_Flip();
 }
 
