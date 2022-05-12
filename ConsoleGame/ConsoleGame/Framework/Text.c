@@ -1,11 +1,11 @@
 #include "Text.h"
 
-void TextCopy(Text* dest, const WCHAR* src)
+void TextCopy(Text* dest, const WCHAR* src, WORD attributes)
 {
 	while (*src)
 	{
 		dest->Char.UnicodeChar = *src;
-		dest->Attributes = TEXT_COLOR_WHITE;
+		dest->Attributes = attributes;
 		
 		++dest;
 		++src;

@@ -26,11 +26,8 @@ void processInput()
 Text text[128];
 void update()
 {
-	TextCopy(text, L"우리반의 존잘은 안재현이다.");
-	for (int32 i = 9; text[i].Char.UnicodeChar != L'\0'; ++i)
-	{
-		text[i].Attributes = BACK_COLOR_RED | TEXT_COLOR_WHITE | TEXT_COLOR_STRONG;
-	}
+	//TextCopyWithWhite(text, L"우리반의 존잘은 성권문이다.");
+	TextCopy(text, L"우리반의 존잘은 성권문이다", 0);
 }
 
 void render()
