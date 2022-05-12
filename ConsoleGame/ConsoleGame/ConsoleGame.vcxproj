@@ -145,6 +145,7 @@
     <ClCompile Include="Framework\Input.c" />
     <ClCompile Include="Framework\Random.c" />
     <ClCompile Include="Framework\Renderer.c" />
+    <ClCompile Include="Framework\Text.c" />
     <ClCompile Include="Framework\Timer.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\Random.h" />
     <ClInclude Include="Framework\Renderer.h" />
+    <ClInclude Include="Framework\Text.h" />
     <ClInclude Include="Framework\Timer.h" />
     <ClInclude Include="Type.h" />
   </ItemGroup>
